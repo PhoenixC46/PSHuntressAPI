@@ -1,4 +1,4 @@
-$Path = "D:\SecureTokenFolder\"
+$Path = "D:\Huntress\"
 $AuthInfo = [pscustomobject](Get-Content $Path"Huntress.txt" -Raw | ConvertFrom-StringData)
 $HKey = $AuthInfo.h1
 $HTok = $AuthInfo.h2
@@ -35,7 +35,7 @@ return $HuntressData}
 Function Huntress-ListOrgs {
     $HuntressData = Connect-Huntress -data organizations
 return $HuntressData}
-Function Huntress-GetAgent {
+Function Huntress-GetOrg {
     param ( 
     [parameter(Mandatory = $true)][Int32]$orgId
     )
@@ -55,9 +55,19 @@ return $HuntressData}
 Function Huntress-Signals {
     $HuntressData = Connect-Huntress -data signals
 return $HuntressData}
+Function Huntress-GetSignal {
+    param ( 
+    [parameter(Mandatory = $true)][Int32]$signalId
+    )
+    $HuntressData = Connect-Huntress -data signals/$signalId
+return $HuntressData}
 
 Function Huntress-BillingReports {
     $HuntressData = Connect-Huntress -data billing_reports
+return $HuntressData}
+
+Function Huntress-SummaryReports {
+    $HuntressData = Connect-Huntress -data reports
 return $HuntressData}
 
 Function Huntress-SummaryReports {
