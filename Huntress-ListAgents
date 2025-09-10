@@ -1,0 +1,5 @@
+# Change the FuncPath to the directory where you placed the PS1 files
+$FuncPath = 'D:\Huntress\Huntress-Functions.ps1'
+. $FuncPath
+$AgentData = (Huntress-ListAgents).agents
+$AgentData
