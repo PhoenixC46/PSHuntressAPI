@@ -5,11 +5,7 @@ $HTok = $AuthInfo.h2
 $OnError = "SilentlyContinue"
 Function Connect-Huntress {
     param ( 
-        [parameter(Mandatory = $true)][string]$data,
-        [parameter(Mandatory = $false)][Int32]$itemLimit,
-        [parameter(Mandatory = $false)][string]$entityType,
-        [parameter(Mandatory = $false)][datetime]$dateFrom,
-        [parameter(Mandatory = $false)][datetime]$dateTo
+        [parameter(Mandatory = $true)][string]$data
     )
     $apiKey = $HKey
     $apiSecret = $HTok
