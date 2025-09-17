@@ -13,14 +13,30 @@ Run the command: ```Huntress-ListAgents```
 If everything has worked correctly you should see a list of all agents appear in the output.
 
 Working functions you can use are:
-```
-Huntress-ListAccounts                  # List all Accounts
-Huntress-ListOrgs                      # List all Orgs
-Huntress-GetOrg -orgId 123456          # Get data for Organization ID: 123456
-Huntress-ListAgents                    # List all Agents
-Huntress-GetAgent -agentId 123456      # Get data for Agent ID: 123456
-Huntress-ListSignals                   # List All Signals (This needs more params to allow filtering!)
-Huntress-GetSignal -signalId 123456    # Get data for Signal ID: 123456
-Huntress-BillingReports                # List all Billing Reports for the account
-Huntress-SummaryReports                # List all Summary Reports for the account
-```
+
+# List all Accounts:
+```Huntress-ListAccounts```
+
+# List all Orgs:
+```Huntress-ListOrgs```
+
+# Get data for Organization ID: 123456
+```Huntress-GetOrg -orgId 123456```
+
+# List all Agents:
+```Huntress-ListAgents```
+
+# Get data for Agent ID: 123456
+```Huntress-GetAgent -agentId 123456```
+
+# List All Signals (limited to 2 items, from 10-Aug-25 to 10-Sept-25, entity = agent, orgId = 789456):
+```Huntress-ListSignals -itemLimit 5 -dateFrom "2025-08-10T00:00:00Z" -dateTo "2025-09-10T00:00:00Z" -entityType agent -orgId 789456```
+
+# Get data for Signal ID: 123456
+```Huntress-GetSignal -signalId 123456```
+
+# List all Billing Reports for the account:
+```Huntress-BillingReports```
+
+# List all Summary Reports for the account:
+```Huntress-SummaryReports```
